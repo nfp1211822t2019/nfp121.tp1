@@ -20,12 +20,16 @@ public class Picture {
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Circle sun2;
+    private Circle terre;
+    private Boolean terreFixe;
+
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture() {
-        // nothing to do... instance variables are automatically set to null
+        terreFixe=true;// nothing to do... instance variables are automatically set to null
     }
 
     /**
@@ -50,11 +54,25 @@ public class Picture {
         roof.makeVisible();
 
         sun = new Circle();
-        sun.changeColor("yellow");
+        sun.changeColor("blue");
         sun.moveHorizontal(180);
         sun.moveVertical(-10);
         sun.changeSize(60);
         sun.makeVisible();
+        
+        sun2 = new Circle();
+        sun2.changeColor("yellow");
+        sun2.moveHorizontal(10);
+        sun2.moveVertical(-25);
+        sun2.changeSize(60);
+        sun2.makeVisible();
+        
+       terre = new Circle();
+        terre.changeColor("green");
+        terre.moveHorizontal(90);
+        terre.moveVertical(-25);
+        terre.changeSize(50);
+        terre.makeVisible();
     }
 
     /**
@@ -82,5 +100,11 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
-
-}
+    
+    public void coucher(){
+        if(terreFixe){
+    sun.slowMoveVertical(250);}
+    }
+    
+      
+   }

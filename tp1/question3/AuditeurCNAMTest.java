@@ -122,4 +122,52 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals(" nom avec accent (é devient e) ? ", "chloe_c",
             auditeur1.login());
     }
+
+   
+    
+
+    public void test_nom_court_me()
+    {
+        question3.AuditeurCNAM auditeur2 = new question3.AuditeurCNAM("Ali", "Bilal", "123");
+        assertEquals("ali_b", auditeur2.login());
+    }
+
+    public void testTestMajuscule()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("HiLal", "Hamada", "123");
+        assertEquals("hilal_h", auditeur1.login());
+        assertEquals("HiLal", auditeur1.nom());
+        assertEquals("Hamada", auditeur1.prenom());
+    }
+
+    public void testTestSpace()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("el Ali", "ahmad", "11");
+        assertEquals("el_ali_a", auditeur1.login());
+    }
+
+    public void testTestAccent()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("ékbal", "îmad", "131");
+        assertEquals("ekbal_i", auditeur1.login());
+    }
+
+    public void testTestTrait()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("EL-Atem", "Layla", "12");
+        assertEquals("el_ate_l", auditeur1.login());
+    }
+
+    public void testTestCourt()
+    {
+        question3.AuditeurCNAM auditeur1 = new question3.AuditeurCNAM("hani", "Hani", "123");
+        assertEquals("hani_h", auditeur1.login());
+    }
 }
+
+
+
+
+
+
+
